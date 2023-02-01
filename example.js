@@ -4,7 +4,7 @@ console.log(num1);
 </script>
 
 
-// Made change
+// Made change in repo example js file
 
 
 
