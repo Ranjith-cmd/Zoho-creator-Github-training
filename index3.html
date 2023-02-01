@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Sty.css">
+    
+</head>
+<body>
+    <!--ZOHO.CREATOR.API.getAllRecords(con).then(function(response){
+            var recordArr = response.data;
+            for(var index in recordArr){
+              let cat = recordArr[index].Student_Name.first_name;
+              $("#Studentn").append($("<option>",
+                {
+                  value:cat,
+                  text:cat
+                }));
+
+              console.log(recordArr[index]);
+            }	
+
+});-->
+    <div class="container">
+        <a href="#" class="button" id="button"> Allocation </a>
+    </div>
+    <div class="popup">
+        <div class="popup-content">
+            <div class="form-content">
+                <label for="Student_id">Student ID</label>
+                <input type="Number" id="Student_id" placeholder="Enter Student ID">
+            </div>
+            <div class="form-content">
+            <label for="Student_Name">Student Name</label>
+            <input type="text" id="Student_Name" placeholder="Enter Student Name">
+        </div>
+        <div class="form-content">
+            <label for="Email">Email</label>
+           <input type="email" id="Email" placeholder="Enter Email">
+       </div>
+        <div class="form-content">
+            <label for="Book_id">Book ID</label>
+            <input type="Number" id="Book_id" placeholder="Enter Book ID">
+        </div>
+        <div class="form-content">
+            <label for="Book_Name">Book Name</label>
+            <input type="text" id="Book_Name" placeholder="Enter Book_Name">
+        </div>
+         <div class="form-content">
+                    <label for="Aldate">Allocation Date</label>
+            <input type="date" id="Aldate" placeholder="Enter Allocation date">
+        </div>
+        <div class="form-content">
+            <label for="ddate">Due Date</label>
+            <input type="date" id="ddate" placeholder="Enter Due Date">
+        </div>
+            <a href="#" class="sbutton" id="sbutton"> Submit </a>
+            <div class="close-btn">&times;</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="fun3.js"></script>
+    <script type="text/javascript" src=" https://js.zohostatic.com/creator/widgets/version/1.0/widgetsdk-min.js"></script>
+    <script type="text/javascript">
+        var config = { 
+    appName : "creatorapp.zoho.in",
+	reportName : "All_Students", 
+	criteria : "(Roll_No !=0)",
+	page : 1,
+	pageSize : 10
+}
+ZOHO.CREATOR.API.getAllRecords(config).then(function(response){
+	var recordArr = response.data;
+	for(var index in recordArr){
+		console.log(recordArr[index]);
+	}	
+});
+    </script>
+</body>
+</html>
+<!---- <script>
+        document.getElementById("button").addEventListener("click",function(){
+            document.querySelector(".popup").style.display="flex";
+        })
+        document.querySelector(".close-btn").addEventListener("click",function(){
+    document.querySelector(".popup").style.display="none";
+        })
+document.querySelector(".sbutton").addEventListener("click",function(){
+            document.querySelector(".popup").style.display="none";
+        })
+        </script> -->
+
